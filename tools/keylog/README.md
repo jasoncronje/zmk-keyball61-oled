@@ -10,7 +10,7 @@ Records how the Keyball61 is really used, to tune the keymap from data: which ph
 
 ## Use
 
-1. Flash a keylog build of the right half: `keyball61_right-keylog-nice_nano_v2-zmk.uf2` (OLED) or `keyball61_nv_right-keylog-nice_nano_v2-zmk.uf2` (nice!view).
+1. Flash a keylog build of the right half: `keyball61_right-keylog-nice_nano_v2-zmk.uf2`.
 2. Install the logger as a LaunchAgent (builds `~/.local/bin/keyball-keylogd`, starts it at login, log in `~/Library/Logs/keyball-keylogd.log`):
 
    ```sh
