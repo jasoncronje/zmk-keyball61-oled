@@ -1,6 +1,6 @@
 # Agent guide
 
-ZMK config for the Keyball61 with the original OLED screens: bought PCB, split, two nice!nano v2, trackball on the right half. The nice!view setup lives in a separate repo, `jasoncronje/zmk-keyball61`; changes made here do nothing on that keyboard. `README.md` covers features and hardware. This file holds only what the code doesn't tell you.
+ZMK config for the Keyball61 with the original OLED screens: bought PCB, split, two nice!nano v2, trackball on the right half. The nice!view setup lives in a separate repo, `jasoncronje/zmk-keyball61-niceview`; changes made here do nothing on that keyboard. `README.md` covers features and hardware. This file holds only what the code doesn't tell you.
 
 ## Which build to flash
 
@@ -14,7 +14,7 @@ ZMK config for the Keyball61 with the original OLED screens: bought PCB, split, 
 - Keymap: `config/keyball61.keymap`. Shield settings: `config/keyball61.conf` and `config/boards/shields/keyball61/*.conf`.
 - Trackball, auto-mouse and scroll setup is in `config/boards/shields/keyball61/keyball61_right.overlay`. It uses layers by number (MOUSE 3, SCROLL 4, HSCROLL 5). Update it if the keymap's layer order changes.
 - A key's MOUSE-layer binding only runs if its position is in `excluded-positions` in that overlay. Otherwise auto-mouse sees the press first, drops the layer, and the key resolves on DEFAULT.
-- If a change also suits the nice!view keyboard, say so; it has to be made again in `jasoncronje/zmk-keyball61`.
+- If a change also suits the nice!view keyboard, say so; it has to be made again in `jasoncronje/zmk-keyball61-niceview`.
 
 ## Build, push, flash
 

@@ -1,6 +1,8 @@
 # Keyball61 ZMK Config (OLED)
 
-A heavily customized ZMK firmware for the wireless [Keyball61](https://github.com/Yowkees/keyball), a 61-key split ortho with an integrated 34mm trackball, running over BLE and tuned for macOS. This repo is for the bought Keyball61 PCB with its original **OLED** screens, on **BLE / ZMK**. The nice!view version is [jasoncronje/zmk-keyball61](https://github.com/jasoncronje/zmk-keyball61). If you're running the wired QMK variant, take a look at: [Yowkees/keyball](https://github.com/Yowkees/keyball).
+> **Which repo is this?** This repo is for the bought Keyball61 PCB with its original **OLED** screens (`keyball61`). If your Keyball61 has **nice!view** screens, use [jasoncronje/zmk-keyball61-niceview](https://github.com/jasoncronje/zmk-keyball61-niceview) instead. The two repos don't share files, so a change in one doesn't reach the other.
+
+A heavily customized ZMK firmware for the wireless [Keyball61](https://github.com/Yowkees/keyball), a 61-key split ortho with an integrated 34mm trackball, running over BLE and tuned for macOS. This repo is for **BLE / ZMK** builds. If you're running the wired QMK variant, take a look at: [Yowkees/keyball](https://github.com/Yowkees/keyball).
 
 > **Note:** This is my personal config, you can use as is or fork to tweak things to your liking.
 
@@ -54,7 +56,7 @@ Firmware builds automatically via GitHub Actions on pushes and pull requests. Re
 The rules in `renovate.json` cover GitHub Actions and the annotated dependencies in `config/west.yml`:
 
 - ZMK follows stable version tags.
-- The PMW3610 driver follows `kumamuk-git/zmk-pmw3610-driver`'s `main` branch, stored as an exact commit. The initial pin, `5e04553ab803d24405bd45621a41310ea3050e59`, matches the checkout recorded in [successful build 40976203775](https://github.com/jasoncronje/zmk-keyball61/actions/runs/40976203775).
+- The PMW3610 driver follows `kumamuk-git/zmk-pmw3610-driver`'s `main` branch, stored as an exact commit. The initial pin, `5e04553ab803d24405bd45621a41310ea3050e59`, matches the checkout recorded in [successful build 40976203775](https://github.com/jasoncronje/zmk-keyball61-niceview/actions/runs/40976203775).
 - The OLED module follows this fork's `keyball61/peripheral-extras-hook` branch, preserving its custom hooks. It does not follow upstream or the fork's `main` branch.
 
 To activate, merge this configuration into the default branch and enable the Renovate GitHub App for this repository. Once the app processes the repository, use its Dependency Dashboard to inspect updates or request a check outside the schedule. Configuration in Git alone does not activate the bot.
