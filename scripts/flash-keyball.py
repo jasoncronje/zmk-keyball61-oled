@@ -381,9 +381,6 @@ def main(argv: list[str] | None = None) -> int:
             if args.check:
                 print("Artifact validation passed; no device was changed.")
                 return 0
-            if not sys.stdin.isatty() or not sys.stdout.isatty():
-                raise FlashError("Flashing requires an interactive terminal (TTY)")
-
             poll = 0.25
             all_confirmed = True
             for index, image in enumerate(firmware, 1):

@@ -15,12 +15,12 @@ Use the repository helper instead of Finder or ad hoc `cp` commands.
    ./scripts/flash-keyball.py --check /absolute/path/to/firmware.zip
    ```
 
-4. Run the helper where you can read its output as it appears. It needs a TTY but never reads input, and it waits for the half with no timeout.
+4. Run the helper where you can read its output as it appears. It never reads input, and it waits for the half with no timeout.
 
-   - Claude Code: run it as a background command under a pseudo-terminal, then read that task's output file. A plain run fails the TTY check, and a foreground run hits the tool timeout.
+   - Claude Code: run it as a background command with a long timeout (the 30 min default can end it before the user plugs the half in), then read that task's output file. A foreground run hits the tool timeout. Use `python3 -u` so output is not buffered:
 
      ```sh
-     script -q /dev/null ./scripts/flash-keyball.py --right "/absolute/path/to/right.uf2" </dev/null
+     python3 -u ./scripts/flash-keyball.py --right "/absolute/path/to/right.uf2"
      ```
 
    - Codex: start it in an attached backend PTY in the current task. Do not call `open_in_codex` for this PTY: it returns `queued` without attaching to the visible integrated terminal.
